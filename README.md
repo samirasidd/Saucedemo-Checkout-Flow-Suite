@@ -1,4 +1,4 @@
-# Waterstones Automation (DRAFT)
+# Waterstones Automation
 
 ⚠️ *Work in Progress - Testing the book purchase flow*
 
