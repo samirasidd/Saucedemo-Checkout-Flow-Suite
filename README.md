@@ -1,2 +1,11 @@
-# Waterstones-Checkout-Flow-Suite
-Automated end-to-end testing of Waterstones.com's book purchase flow from navigation to checkout using Selenium.
+# Waterstones Automation (DRAFT)
+
+⚠️ *Work in Progress - Testing the book purchase flow* ⚠️
+
+What's Tested
+✅ Homepage load
+✅ Fiction → Classics navigation
+✅ Add-to-basket functionality
+✅ Checkout form (WIP)
+
+Will update with detailed docs after implementation.
