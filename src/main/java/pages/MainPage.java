@@ -1,32 +1,36 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebElement;
+import static utilities.DriverSetup.getDriver;
 
 public class MainPage extends BasePage {
-    // Essential elements for first test
-    public String url = "https://www.waterstones.com/";
-    public String title = "Buy books, stationery and gifts, online and in store | Waterstones";
+    // Locators
+    public By usernameField = By.id("user-name");
+    public By passwordField = By.id("password");
+    public By loginButton = By.id("login-button");
+    public By logo = By.className("login_logo");
+    public By errorMessage = By.cssSelector("h3[data-test='error']");
 
-    public By cookieAccept = By.xpath("//button[@aria-label='Accept All']");
-    public By headerLogo = By.xpath("//a[@class='logo']");
+    public void loadPage() {
+        getDriver().get("https://www.saucedemo.com/");
+    }
 
-    // Helper method for first test
-    public void loadAndAcceptCookies() {
-        try {
-            // Step 1: Load page
-            loadAPage(url);
+    public void login(String username, String password) {
+        writeOnElement(usernameField, username);
+        writeOnElement(passwordField, password);
+        clickOnElement(loginButton);
+    }
 
-            // Step 2: Accept cookies
-            WebElement cookieBtn = waitForElementToBeClickable(cookieAccept, 5);
-            cookieBtn.click();
+    public boolean isLogoDisplayed() {
+        return visibleState(logo);
+    }
 
-            // Step 3: Verify cookie banner disappears
-            waitForElementToDisappear(cookieAccept, 3);
-        } catch (TimeoutException e) {
-            System.out.println("Cookie acceptance not required: " + e.getMessage());
-        }
+    public boolean isOnInventoryPage() {
+        return getDriver().getCurrentUrl().contains("/inventory.html");
+    }
+
+    public String getErrorMessage() {
+        return getElementText(errorMessage);
     }
 
 }
