@@ -36,3 +36,21 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Allure reports and results
+target/allure-results/
+target/site/allure-maven-plugin/
+allure-report/
+
+# Other build/test artifacts
+target/surefire-reports/
+target/failsafe-reports/
+target/*.jar
+target/*.war
+target/*.ear
+
+# IDE specific files
+.idea/
+
+# System files
+Thumbs.db

@@ -1,9 +1,18 @@
 package pages;
 
+import io.qameta.allure.Allure;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
+
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 
 import static utilities.DriverSetup.getDriver;
@@ -60,5 +69,16 @@ public class BasePage {
                 .build()
                 .perform();
     }
+
+
+    public void takeScreenshot(String stepName) {
+        Allure.step(stepName, () -> {
+            Allure.addAttachment(stepName,
+                    new ByteArrayInputStream(
+                            ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.BYTES)
+                    ));
+        });
+    }
+
 
 }
