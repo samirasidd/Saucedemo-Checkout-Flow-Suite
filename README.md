@@ -39,22 +39,7 @@ A robust automation framework built with Selenium WebDriver, Java, and TestNG to
 | 💳 Checkout Process   | 2          | ✅     |
 | 📦 Order Confirmation | 1          | ✅     |
 
----
 
-## 📸 Allure Report Screenshots
-
-Below are sample screenshots from the Allure report to give you insights into the test results and execution:
-
-### ✅ Overview Dashboard  
-![Allure Overview](screenshots/Allure-report.jpg)
-
-### 📊 Test Results Summary  
-![Test Results](screenshots/Graphs.jpg)
-
-### 🔍 Detailed Test Case View  
-![Test Case Details](screenshots/After-login.jpg)
-
-> **Note:** Place your screenshots in the `screenshots/` folder within the project root for these images to render here.
 
 ---
 
