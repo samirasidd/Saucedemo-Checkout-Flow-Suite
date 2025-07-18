@@ -7,7 +7,7 @@ import utilities.DriverSetup;
 
 public class TestCartCounter extends DriverSetup {
 
-    @Test(description = "SD_CART_05 - Verify cart counter increments when adding an item")
+    @Test(description = "Verify cart counter increments when adding an item")
     public void testCartCounterIncrementsWhenAddingItem() {
         // Initialize page objects
         MainPage mainPage = new MainPage();

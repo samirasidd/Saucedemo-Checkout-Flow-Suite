@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,7 +11,7 @@ import static utilities.DriverSetup.getDriver;
 public class CartPage extends BasePage {
 
     private final By checkoutButton = By.id("checkout");
-    private final By cartItems = By.className("cart_item");
+    //private final By cartItems = By.className("cart_item");
 
 
     public void clickCheckoutButton() {
@@ -21,7 +20,4 @@ public class CartPage extends BasePage {
                 .click();
     }
 
-    public int getCartItemCount() {
-        return getDriver().findElements(cartItems).size();
-    }
 }

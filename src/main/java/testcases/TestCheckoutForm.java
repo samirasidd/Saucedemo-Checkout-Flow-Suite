@@ -7,7 +7,7 @@ import utilities.DriverSetup;
 
 public class TestCheckoutForm extends DriverSetup {
 
-    @Test(description = "SD_FORM_07 - Validate form submission with test data")
+    @Test(description = "Validate form submission with test data")
     public void testCheckoutFormSubmission() {
         // Initialize page objects
         MainPage mainPage = new MainPage();
@@ -39,8 +39,6 @@ public class TestCheckoutForm extends DriverSetup {
             // 5. Verify total amount is displayed
             Assert.assertTrue(checkoutStepTwoPage.isTotalAmountDisplayed(),
                     "Total amount including tax should be displayed");
-
-            // 6. Optional: Verify the test data is reflected in summary
 
         } catch (Exception e) {
             throw new RuntimeException("Test failed: " + e.getMessage(), e);

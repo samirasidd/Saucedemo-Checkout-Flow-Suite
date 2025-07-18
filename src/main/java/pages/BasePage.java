@@ -1,12 +1,9 @@
 package pages;
 
-import io.qameta.allure.Allure;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.io.ByteArrayInputStream;
 import java.time.Duration;
 
 import static utilities.DriverSetup.getDriver;
@@ -35,10 +32,6 @@ public class BasePage {
         }
     }
 
-    public void loadAPage(String url) {
-        getDriver().get(url);
-    }
-
     public String getPageTitle() {
         return getDriver().getTitle();
     }
@@ -59,34 +52,7 @@ public class BasePage {
     }
 
 
-    public void hoverOverElement(By locator) {
-        Actions actions = new Actions(getDriver());
-        WebElement element = waitForElementToBeVisible(locator, 10);
-        actions.moveToElement(element).perform();
-    }
-
-
-    public void hoverAndClick(By hoverLocator, By clickLocator) {
-        hoverOverElement(hoverLocator);
-        clickOnElement(clickLocator);
-    }
-
-    public WebElement waitForElementToBeClickable(By locator, int timeoutInSeconds) {
-        return new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutInSeconds))
-                .until(ExpectedConditions.elementToBeClickable(locator));
-    }
-
-    public void waitForElementToDisappear(By locator, int timeoutInSeconds) {
-        new WebDriverWait(getDriver(), Duration.ofSeconds(timeoutInSeconds))
-                .until(ExpectedConditions.invisibilityOfElementLocated(locator));
-    }
-
     public Actions actions = new Actions(getDriver());
-
-    // Core scroll methods
-    public void scrollByPixels(int x, int y) {
-        actions.scrollByAmount(x, y).build().perform();
-    }
 
     public void clickWithScroll(WebElement element) {
         actions.scrollToElement(element)
@@ -95,11 +61,4 @@ public class BasePage {
                 .perform();
     }
 
-    public void clickWithScroll(By locator) {
-        WebElement element = waitForElementToBeVisible(locator, 10);
-        actions.scrollToElement(element)
-                .click(element)
-                .build()
-                .perform();
-    }
 }

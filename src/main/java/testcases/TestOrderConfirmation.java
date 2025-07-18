@@ -7,7 +7,7 @@ import utilities.DriverSetup;
 
 public class TestOrderConfirmation extends DriverSetup {
 
-    @Test(description = "SD_ORDER_08 - Validate order confirmation")
+    @Test(description = "Validate order confirmation")
     public void testOrderConfirmation() {
         // Initialize page objects
         MainPage mainPage = new MainPage();

@@ -6,8 +6,6 @@ import org.testng.annotations.Test;
 import pages.*;
 import utilities.DriverSetup;
 
-import java.time.Duration;
-
 public class TestScrolling extends DriverSetup {
 
     @Test(description = "Verify product details with robust element location")

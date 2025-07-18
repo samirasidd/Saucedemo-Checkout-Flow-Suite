@@ -16,10 +16,10 @@ public class TestAlert extends DriverSetup {
         // 1. Load page and login
         mainPage.loadPage();
         mainPage.login("standard_user", "secret_sauce");
-        Thread.sleep(3000);
+
         // 2. Handle alert if present (non-blocking approach)
         try {
-            if (inventoryPage.isAlertPresent()) {  // Changed to instance method call
+            if (inventoryPage.isAlertPresent()) {
                 String alertText = inventoryPage.getAlertText();
 
                 // 3. Validate alert content
@@ -29,6 +29,7 @@ public class TestAlert extends DriverSetup {
 
                 // 4. Handle alert based on type
                 if (alertText.contains("Google Password Manager")) {
+
                     // For Google alerts - just dismiss
                     inventoryPage.dismissAlert();
                     System.out.println("Dismissed Google password warning");
@@ -40,7 +41,7 @@ public class TestAlert extends DriverSetup {
         } catch (Exception e) {
             System.out.println("No alert present or error handling alert: " + e.getMessage());
         }
-        Thread.sleep(3000);
+
         // 5. Verify successful navigation
         Assert.assertTrue(getDriver().getCurrentUrl().contains("/inventory.html"),
                 "Login should succeed and redirect to inventory page");

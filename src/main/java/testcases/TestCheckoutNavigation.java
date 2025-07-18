@@ -7,7 +7,7 @@ import utilities.DriverSetup;
 
 public class TestCheckoutNavigation extends DriverSetup {
 
-    @Test(description = "SD_CHECKOUT_06 - Ensure checkout page loads from cart")
+    @Test(description = "Ensure checkout page loads from cart")
     public void testCheckoutPageNavigation() {
         // Initialize page objects
         MainPage mainPage = new MainPage();

@@ -23,10 +23,6 @@ public class CheckoutStepTwoPage extends BasePage {
                 .isDisplayed();
     }
 
-    public String getTotalAmountText() {
-        return getDriver().findElement(totalAmount).getText();
-    }
-
     public void clickFinish() {
         getDriver().findElement(finishButton).click();
     }
