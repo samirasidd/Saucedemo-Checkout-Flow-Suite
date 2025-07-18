@@ -25,21 +25,6 @@ A robust automation framework built with Selenium WebDriver, Java, and TestNG to
 | Driver Management | WebDriverManager         |
 | Reporting         | TestNG (built-in), Allure (optional) |
 
----
-
-## 📁 Project Structure
-
-saucedemo-automation/
-├── src/
-│ ├── main/java/
-│ │ └── utilities/
-│ │ └── DriverSetup.java # WebDriver initialization and config
-│ ├── test/java/
-│ │ ├── pages/ # Page Object Model classes
-│ │ ├── testcases/ # Test classes with TestNG annotations
-│ │ └── utilities/ # Common utilities and helpers
-├── pom.xml # Maven build config with dependencies
-└── README.md
 
 
 ---
