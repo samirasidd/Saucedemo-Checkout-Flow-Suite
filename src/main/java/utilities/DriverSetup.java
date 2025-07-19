@@ -40,6 +40,7 @@ public class DriverSetup {
     @AfterMethod
     public void closeBrowser() {
         getDriver().quit();
+
     }
 
     public WebDriver getBrowser(String name) {

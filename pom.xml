@@ -64,6 +64,33 @@
       <artifactId>allure-testng</artifactId>
       <version>2.24.0</version> <!-- Updated version -->
     </dependency>
+    <!-- Cucumber Core -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>7.15.0</version>
+    </dependency>
+
+    <!-- Cucumber-TestNG Integration -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-testng</artifactId>
+      <version>7.15.0</version>
+    </dependency>
+
+    <!-- Dependency Injection (Optional) -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-picocontainer</artifactId>
+      <version>7.15.0</version>
+    </dependency>
+
+    <!-- Allure Reporting (Optional) -->
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-cucumber7-jvm</artifactId>
+      <version>2.24.0</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -80,6 +107,16 @@
         <groupId>io.qameta.allure</groupId>
         <artifactId>allure-maven-plugin</artifactId>
         <version>2.10.0</version> <!-- Version available in Maven Central -->
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>**/*IT.java</include>
+            <include>**/*Test.java</include>
+          </includes>
+        </configuration>
       </plugin>
     </plugins>
   </build>

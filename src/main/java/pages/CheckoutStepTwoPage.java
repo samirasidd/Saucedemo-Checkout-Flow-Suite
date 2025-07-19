@@ -10,7 +10,7 @@ import static utilities.DriverSetup.getDriver;
 
 public class CheckoutStepTwoPage extends BasePage {
 
-    private final By totalAmount = By.xpath("//div[@class='summary_total_label']");
+    public final By totalAmount = By.xpath("//div[@class='summary_total_label']");
     private final By finishButton = By.id("finish");
 
     public CheckoutStepTwoPage() {
@@ -25,5 +25,11 @@ public class CheckoutStepTwoPage extends BasePage {
 
     public void clickFinish() {
         getDriver().findElement(finishButton).click();
+    }
+
+    public String getTotalAmount() {
+        return new WebDriverWait(getDriver(), Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(totalAmount))
+                .getText();
     }
 }
